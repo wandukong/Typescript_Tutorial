@@ -1,0 +1,22 @@
+{
+  "name": "Typescript-Tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/lodash": "^4.14.161",
+    "lodash": "^4.17.20",
+    "node-module": "^2.0.0",
+    "node-modules": "^1.0.1"
+  },
+  "devDependencies": {
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  }
+}
