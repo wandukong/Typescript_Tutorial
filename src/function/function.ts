@@ -12,7 +12,6 @@
 //     return '';
 // }
 
-
 // function getText3(name: string, age: number, language?: string) : string{   // ? 를 붙여서 선택 매개변수 선언 가능, 선택 매개변수는 끝에 선언해야 한다.
 //     const nameText = name.substr(0,10);
 //     const ageText = age >= 35 ? 'senior' : 'junior';
@@ -24,7 +23,6 @@
 // console.log(getText3('Mike',23));
 // getText3('Mike',23,123);
 
-
 // function getText4(name: string, age: number = 15, language = 'korean') : string{  // =으로 기본값 지정가능, 타입을 따로 지정 안 해줘도 됨. 기본 값을 지정하면 자동적으로 선택 매개변수가 됨.
 //     const nameText = name.substr(0,10);
 //     const ageText = age;
@@ -34,8 +32,6 @@
 
 // console.log(getText4('Mike',23,));
 // console.log(getText4('Mike'));
-
-
 
 // function getText5(name: string, ...rest : number[]) : string{  // ...을 통하여 나머지 매개변수를 나타낸다. rest parameters는 무조건 배열로 선언해야한다.
 //     return '';
@@ -58,8 +54,6 @@
 // const addV : number = add(1,2);
 //console.log(add(1,'2'));
 
-
-
 //매개변수에 이름을 지어주는 named parameters.
 // function getText({name, age = 15, language,}: {name: string,age?: number, language?: string}) : string {
 //     const nameText = name.substr(0,10);
@@ -67,15 +61,12 @@
 //     return `name: ${nameText}, age: ${ageText}, language: ${language}`;
 // }
 
-
-
 //인터페이스로 정의해서 사용 가능
 // interface Param{
 //     name: string;
 //     age?: number;
 //     language?: string;
 // }
-
 
 // function getText({name, age = 15, language} : Param) : string {
 //     const nameText = name;
@@ -85,10 +76,16 @@
 
 // console.log(getText({name:"양승완"}))
 
-
-
-function getText({ name, age = 15, language }: { name: string; age?: number; language?: string; }) : string {
-    const nameText = name.substr(0,10);
-    const ageText = age >= 35 ? 'senior' : 'junior';
-    return `name: ${nameText}, age: ${ageText}, language: ${language}`;
+function getText({
+  name,
+  age = 15,
+  language,
+}: {
+  name: string;
+  age?: number;
+  language?: string;
+}): string {
+  const nameText = name.substr(0, 10);
+  const ageText = age >= 35 ? "senior" : "junior";
+  return `name: ${nameText}, age: ${ageText}, language: ${language}`;
 }

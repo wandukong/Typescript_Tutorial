@@ -2,4 +2,4 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 let width;
 width = 100;
-width = '1000px';
+width = "1000px";

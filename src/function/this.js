@@ -14,11 +14,9 @@
 // add(5); // // this가 가리키는 것 : counter
 // console.log(counter.value);
 
-
-
 // function Counter2(){
 //     this.value = 0;
-//     this.add = function(amount){  // 일반함수 
+//     this.add = function(amount){  // 일반함수
 //         this.value += amount;  //  동적으로 결정
 //         console.log(this === global);
 //     };
@@ -31,38 +29,31 @@
 // add2(5);  // 아무것도 가르키고 있지 않기 때문에 전역(global) 객체.
 // console.log(counter2.value);
 
-
-
-
-// const counter3 = { // 객체 
+// const counter3 = { // 객체
 //     value : 0,
-//     add: function(amount){  // 일반함수 
-//         this.value += amount;  
+//     add: function(amount){  // 일반함수
+//         this.value += amount;
 //     }
 // };
 // console.log(counter3.value);
-// counter3.add(5); 
+// counter3.add(5);
 // console.log(counter3.value);
 // const add3 = counter3.add;
-// add3(5); 
+// add3(5);
 // console.log(counter3.value);
 
-
-
-
-// const counter4 = { // 객체 
+// const counter4 = { // 객체
 //     value : 0,
-//     add : (amount) => {  // 화살표 함수 
+//     add : (amount) => {  // 화살표 함수
 //         this.value += amount;    // 해당 코드가 실행되어도 이 화살표 함수를 감싸고 있는 함수가 없기 때문에 항상 전역 객체를 가리킨다.
 //     }
 // };
 // console.log(counter4.value);
-// counter4.add(5); 
+// counter4.add(5);
 // console.log(counter4.value);
 // const add4 = counter4.add;
-// add4(5);  
+// add4(5);
 // console.log(counter4.value);
-
 
 // var value = 1;
 
@@ -81,36 +72,32 @@
 
 // obj.foo();
 
-
-
 // var obj1 = {
 //     name: 'Lee',
 //     sayName: function() {
 //       console.log(this.name);
 //     }
 //   }
-  
+
 //   var obj2 = {
 //     name: 'Kim'
 //   }
-  
+
 //   obj2.sayName = obj1.sayName;
-  
+
 //   obj1.sayName();
 //   obj2.sayName();
 
+function Person(name) {
+  this.name = name;
+}
 
+Person.prototype.getName = function () {
+  return this.name;
+};
 
-  function Person(name) {
-    this.name = name;
-  }
-  
-  Person.prototype.getName = function() {
-    return this.name;
-  }
-  
-  var me = new Person('Lee');
-  console.log(me.getName());
-  
-  Person.prototype.name = 'Kim';
-  console.log(Person.prototype.getName());
+var me = new Person("Lee");
+console.log(me.getName());
+
+Person.prototype.name = "Kim";
+console.log(Person.prototype.getName());
